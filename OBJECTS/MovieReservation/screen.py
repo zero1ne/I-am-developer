@@ -8,6 +8,9 @@ class Screen:
         self._sequence = sequence
         self._start_time = start_time
 
+    def get_movie(self) -> 'Movie':
+        return self._movie
+
     def get_sequence(self) -> int:
         return self._sequence
 

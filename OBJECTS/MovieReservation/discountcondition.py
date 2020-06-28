@@ -4,7 +4,7 @@ class DiscountCondition():
     def __init__(self) -> None:
         pass
 
-    def is_satisfied(self) -> bool:
+    def is_satisfied(self, screen: 'Screen') -> bool:
         raise NotImplementedError()
 
 
