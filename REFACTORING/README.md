@@ -19,3 +19,29 @@
 - Testing : 프로그램의 동작을 같게 유지하는데 도움을 준다.
 - YAGNI(You aren't going to need it) : 당장에 필요한 기능만으로 최대한 간결하게 만들어라 → TDD(Test code + Refactoring)와 CI를 통해 애자일의 이점을 취할 수 있다
 - 성능 개선 : 대부분 프로그램은 코드 중 극히 일부에서 대부분의 시간을 소비한다 → 시간과 공간을 많이 잡아먹는 지점을 알아내서 개선하는 것이 큰 도움이 된다.
+
+### CHAPTER 03 : 코드에서 나는 악취
+- Mysterious Name : 이름은 단순하고 명료해야한다 → 마땅한 이름이 떠오르지 않는다면 근본적인 문제가 숨어 있을 가능성이 높다
+- Duplicated Code : 비슷한 코드는 코드의 수정을 방해한다.
+- Long Function : 주석을 달아야할 부분은 함수로 만들고 적당한 이름을 지어야한다 → 무엇을 하는지 쉽게 보여야 한다.
+- Long Parameter List : 객체를 통째로 넘기거나, 클래스로 묶어 매개변수를 제거해야 한다. 
+- Global Data : 어디서 사용되는지 파악하기 어려워 진다.
+- Mutable Data : 필요한 곳에서만 값이 수정될 수 있도록 캡슐화 하거나 불변성을 적용한다.
+- Divergent Change : 하나의 모듈이 하나의 책임을 가지게 하여야 한다
+- Shotgun Surgery : 함께 변경되는 대상이 나뉘어져 있다면 묶어야 한다.
+- Feature Envy : 코드 영역 안에서 이뤄지는 상호작용은 늘리고 영역 사이에서 이뤄지는 상호작용은 최소로 줄인다.
+- Data Clumps : 같이 사용되는 데이터는 하나로 묶어 주어야 한다.
+- Primitive Obsession : 기본형을 보다 의미있는 형태로 바꾸어야 한다
+- Repeated Switches : 다형성을 이용하도록 전환하여야 한다.
+- Loops : 필요하다면 일급 함수를 통해간결하게 수정한다.
+- Lazy Element : 필요치 않게 요소화 되어있다면 다시 역으로 합쳐야 한다.
+- Speculative Generality : 실제 사용하지 않는 죽은 코드는 제거하여야 한다.
+- Temporary Field : 특정 상황에서만 값이 채워지는 값의 경우 분리하여야 한다.
+- Message Chains : 객체를 연속으로 요청하는 경우는 숨겨야 한다.
+- Middle Man : 객체가 지나치게 위임을 사용하고 있다면 실제 일을 하는 객체와 소통하게 하자.
+- Insider Trading : 모듈 간의 데이터 이동을 명확하게 드러내야한다.
+- Large Class : 클래스 내부의 중복을 제거하고 필요한 부분
+- Alternative Classes with Different Interfaces : 다른 동작으로 교체하기 위해 메서드 시그니처를 일치하거나 슈퍼클래스로 추출한다.
+- Data Class : 값을 일관성 있게 유지하기 위해 세터를 제거하거나, 필요한 클래스로 병합하는 걸 생각해 본다.
+- Refused Bequest : 인터페이스를 따르고 싶지 않다면 상속이 불필요한지 생각해 본다.
+- Comments : 주석을 남기기 보다는 주석이 필요 없는 코드로 바꿀 수 있는지 생각해 본다.
